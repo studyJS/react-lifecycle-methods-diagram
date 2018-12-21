@@ -1,61 +1,61 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-import { isReactVersion } from './propTypes';
+import { isReactVersion } from './propTypes'
 
 const diagramVersions = {
   16.3: import('./versions/16.3'),
   16.4: import('./versions/16.4'),
-};
+  16.6: import('./versions/16.6')
+}
 
 export default class Diagram extends Component {
   static propTypes = {
     advanced: PropTypes.bool,
-    reactVersion: isReactVersion.isRequired,
-  };
+    reactVersion: isReactVersion.isRequired
+  }
 
   state = {
-    diagramElements: null,
-  };
-
-  componentDidMount() {
-    this.loadDiagramElements();
+    diagramElements: null
   }
 
-  componentDidUpdate(prevProps) {
-    const { reactVersion } = this.props;
+  componentDidMount () {
+    this.loadDiagramElements()
+  }
+
+  componentDidUpdate (prevProps) {
+    const { reactVersion } = this.props
 
     if (reactVersion !== prevProps.reactVersion) {
-      this.loadDiagramElements();
+      this.loadDiagramElements()
     }
   }
 
-  async loadDiagramElements() {
-    const { reactVersion } = this.props;
-    const diagramElements = await diagramVersions[reactVersion];
+  async loadDiagramElements () {
+    const { reactVersion } = this.props
+    const diagramElements = await diagramVersions[reactVersion]
 
-    this.setState({ diagramElements });
+    this.setState({ diagramElements })
   }
 
-  render() {
-    const { advanced } = this.props;
-    const { diagramElements } = this.state;
+  render () {
+    const { advanced } = this.props
+    const { diagramElements } = this.state
 
     if (!diagramElements) {
-      return null;
+      return null
     }
 
-    const { Mounting, Updating, Unmounting } = diagramElements;
+    const { Mounting, Updating, Unmounting, ErrorHandling } = diagramElements
 
     return (
       <>
-        <h2 className="hidden">
-          Component lifecycle
-        </h2>
+        <h2 className='hidden'>Component lifecycle</h2>
         <Mounting advanced={advanced} />
         <Updating advanced={advanced} />
         <Unmounting advanced={advanced} />
+        {ErrorHandling ? <ErrorHandling advanced={advanced} /> : null}
       </>
-    );
+    )
   }
 }
