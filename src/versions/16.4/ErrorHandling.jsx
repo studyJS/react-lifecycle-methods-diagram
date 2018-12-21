@@ -6,11 +6,11 @@ import mergeClassNames from 'merge-class-names'
 const ErrorHandling = ({ advanced }) => {
   const gridColumn = '2 /span 5'
   const row = advanced ? 24 : 15
-  const gridRow = `${row} / span 9`
+  const gridRow = `${row} / span 7`
   return (
     <>
       <section
-        className={mergeClassNames('Section', advanced && 'Section__error')}
+        className={mergeClassNames('Section Section__error')}
         style={{
           gridColumn,
           gridRow
@@ -19,15 +19,7 @@ const ErrorHandling = ({ advanced }) => {
         <h3 className='Section__title'>ErrorHandling</h3>
         <div className='Method Method--hasLink pre-commit'>
           <a
-            href='https://reactjs.org/docs/react-component.html#static-getderivedstatefromerror'
-            target='_blank'
-          >
-            static getDerivedStateFromError
-          </a>
-          <br />
-          <br />
-          <a
-            href='https://5bcf5863c6aed64970d6de5b--reactjs.netlify.com/docs/react-component.html#componentdidcatch'
+            href='https://5b90c17ac9659241e7f4c938--reactjs.netlify.com/docs/react-component.html#componentdidcatch'
             target='_blank'
           >
             componentDidCatch
