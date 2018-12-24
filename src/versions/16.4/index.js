@@ -1,4 +1,8 @@
-export Mounting from './Mounting'
-export Updating from './Updating'
-export Unmounting from './Unmounting'
-export ErrorHandling from './ErrorHandling'
+import Mounting from './Mounting';
+import Updating from './Updating';
+import Unmounting from './Unmounting';
+import ErrorHandling from './ErrorHandling';
+
+export {
+  Mounting, Updating, Unmounting, ErrorHandling,
+};

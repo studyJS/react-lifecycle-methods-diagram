@@ -4,5 +4,5 @@ import Unmounting from './Unmounting';
 import ErrorHandling from './ErrorHandling';
 
 export {
-  Mounting, Updating, Unmounting, ErrorHandling,
+ Mounting, Updating, Unmounting, ErrorHandling 
 };

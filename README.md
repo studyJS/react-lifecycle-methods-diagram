@@ -76,3 +76,32 @@ Thank you to all our contributors that helped on this project!
 
 ![Top Contributors](https://opencollective.com/react-lifecycle-methods-diagram/contributors.svg?width=890&button=false)
 
+
+```
+"extends": "react-app",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "import/prefer-default-export": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        "required": {
+          "some": [
+            "id",
+            "nesting"
+          ]
+        }
+      }
+    ],
+    "prefer-destructuring": "warn",
+    "prefer-spread": "warn",
+    "react/require-default-props": "off",
+    "sort-keys": "error"
+  }
+  ```

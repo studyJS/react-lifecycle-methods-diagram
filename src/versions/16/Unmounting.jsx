@@ -6,18 +6,14 @@ import Method from '../../diagramElements/Method';
 import Arrow from '../../diagramElements/Arrow';
 
 const Unmounting = ({ advanced }) => (
-  <Section
-    advanced={advanced}
-    name="Unmounting"
-    col={5}
-  >
+  <Section advanced={advanced} name="Unmounting" col={5} area={8}>
     <Arrow />
     <Method
       main
       name="componentWillUnmount"
       docname="componentwillunmount"
       type="commit"
-      row={advanced ? 7 : 4}
+      row={advanced ? 8 : 4}
     />
   </Section>
 );

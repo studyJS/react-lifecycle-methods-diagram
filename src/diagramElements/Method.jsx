@@ -16,10 +16,12 @@ const Method = ({
   row,
   secondary,
   type,
+  isDeprecated,
 }) => (
   <li
     className={mergeClassNames(
       'Method',
+      isDeprecated && 'Method--deprecated',
       docname && 'Method--hasLink',
       endsInMiddle && 'Method--endsInMiddle',
       main && 'Method--main',

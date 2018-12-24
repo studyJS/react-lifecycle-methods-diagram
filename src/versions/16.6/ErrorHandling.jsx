@@ -1,45 +1,46 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+/* eslint-disable react/jsx-no-target-blank */
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import mergeClassNames from 'merge-class-names'
+import mergeClassNames from 'merge-class-names';
 
 const ErrorHandling = ({ advanced }) => {
-  const gridColumn = '2 /span 5'
-  const row = advanced ? 24 : 15
-  const gridRow = `${row} / span 9`
+  const gridColumn = '2 /span 5';
+  const row = advanced ? 25 : 15;
+  const gridRow = `${row} / span 9`;
   return (
     <>
       <section
-        className={mergeClassNames('Section', advanced && 'Section__error')}
+        className={mergeClassNames('Section Section__error')}
         style={{
           gridColumn,
-          gridRow
+          gridRow,
         }}
       >
-        <h3 className='Section__title'>ErrorHandling</h3>
-        <div className='Method Method--hasLink pre-commit'>
+        <h3 className="Section__title">ErrorHandling</h3>
+        <div className="Method Method--hasLink pre-commit">
           <a
-            href='https://reactjs.org/docs/react-component.html#static-getderivedstatefromerror'
-            target='_blank'
+            href="https://reactjs.org/docs/react-component.html#static-getderivedstatefromerror"
+            target="_blank"
           >
             static getDerivedStateFromError
           </a>
           <br />
           <br />
           <a
-            href='https://5bcf5863c6aed64970d6de5b--reactjs.netlify.com/docs/react-component.html#componentdidcatch'
-            target='_blank'
+            href="https://5bcf5863c6aed64970d6de5b--reactjs.netlify.com/docs/react-component.html#componentdidcatch"
+            target="_blank"
           >
             componentDidCatch
           </a>
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
 ErrorHandling.propTypes = {
-  advanced: PropTypes.bool
-}
+  advanced: PropTypes.bool,
+};
 
-export default ErrorHandling
+export default ErrorHandling;

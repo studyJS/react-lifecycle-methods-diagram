@@ -7,7 +7,7 @@ import Arrow from '../../diagramElements/Arrow'
 
 const Mounting = ({ advanced }) =>
   advanced ? (
-    <Section advanced name='Mounting' col={1}>
+    <Section advanced name='Mounting' col={1} area={9}>
       <Arrow />
       <Method
         main
@@ -18,12 +18,11 @@ const Mounting = ({ advanced }) =>
       />
       <Arrow />
       <Method
-        name='componentWillMount'
-        docname='componentWillMount'
+        name='UNSAFE_componentWillMount'
+        docname='unsafe_componentwillmount'
         type='render'
-        row={2}
-        colspan={2}
-        endsInMiddle
+        row={4}
+        isDeprecated
       />
       <Arrow />
       <Method
@@ -31,7 +30,7 @@ const Mounting = ({ advanced }) =>
         name='render'
         docname='render'
         type='render'
-        row={4}
+        row={6}
         colspan={4}
       />
       <Arrow />
@@ -39,7 +38,7 @@ const Mounting = ({ advanced }) =>
         secondary
         name='React updates DOM and refs'
         type='pre-commit'
-        row={6}
+        row={8}
         colspan={4}
       />
       <Arrow solid />
@@ -48,7 +47,7 @@ const Mounting = ({ advanced }) =>
         name='componentDidMount'
         docname='componentdidmount'
         type='commit'
-        row={7}
+        row={9}
       />
     </Section>
   ) : (

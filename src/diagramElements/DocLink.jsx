@@ -11,7 +11,7 @@ class DocLinkInternal extends Component {
     docname: PropTypes.string,
     locale: PropTypes.string,
     name: PropTypes.string.isRequired,
-  };
+  }
 
   state = {
     translatedName: null,
@@ -26,7 +26,10 @@ class DocLinkInternal extends Component {
   componentDidUpdate(prevProps) {
     // Update only if props changed, ignore updates from state change
     // eslint-disable-next-line react/destructuring-assignment
-    if (Object.keys(this.props).some(key => this.props[key] !== prevProps[key])) {
+    if (
+      // eslint-disable-next-line react/destructuring-assignment
+      Object.keys(this.props).some(key => this.props[key] !== prevProps[key])
+    ) {
       this.getTranslation();
     }
   }
@@ -39,7 +42,11 @@ class DocLinkInternal extends Component {
     const { locale, name } = this.props;
 
     const translatedName = await t(name, null, locale);
-    const translatedTitle = await t('Read docs for {name} (opens in a new tab)', { name }, locale);
+    const translatedTitle = await t(
+      'Read docs for {name} (opens in a new tab)',
+      { name },
+      locale,
+    );
 
     if (!this.isComponentMounted) {
       return;
@@ -54,23 +61,17 @@ class DocLinkInternal extends Component {
 
     const children = splitUpperCase(name);
 
-    return (
-      docname
-        ? (
-          <a
-            href={`https://reactjs.org/docs/react-component.html#${docname}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            title={title}
-          >
-            {children}
-          </a>
-        )
-        : (
-          <span>
-            {children}
-          </span>
-        )
+    return docname ? (
+      <a
+        href={`https://reactjs.org/docs/react-component.html#${docname}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={title}
+      >
+        {children}
+      </a>
+    ) : (
+      <span>{children}</span>
     );
   }
 }
