@@ -44,13 +44,7 @@ const Updating = ({ advanced }) => (advanced ? (
           row={5}
           colspan={4}
         />
-        <Method
-          name='getSnapshotBeforeUpdate'
-          docname='getsnapshotbeforeupdate'
-          type='pre-commit'
-          row={6}
-          colspan={3}
-        />
+
         <Arrow solid col={3} />
         <Method
           secondary
@@ -93,14 +87,7 @@ const Updating = ({ advanced }) => (advanced ? (
           colspan={4}
         />
         <Arrow />
-        <Method
-          name='getSnapshotBeforeUpdate'
-          docname='getsnapshotbeforeupdate'
-          type='pre-commit'
-          col={2}
-          row={6}
-          colspan={3}
-        />
+
         <Method
           secondary
           name='React updates DOM and refs'
@@ -133,14 +120,7 @@ const Updating = ({ advanced }) => (advanced ? (
           row={5}
           colspan={4}
         />
-        <Method
-          name='getSnapshotBeforeUpdate'
-          docname='getsnapshotbeforeupdate'
-          type='pre-commit'
-          col={2}
-          row={6}
-          colspan={3}
-        />
+
         <Method
           secondary
           name='React updates DOM and refs'
